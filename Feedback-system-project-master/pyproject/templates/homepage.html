@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+    background-color:rgba(0, 0, 0, 0.849) ;
+    overflow:hidden;
+
+ } 
+.image{
+    height: 10px;
+    width: 10px;
+
+}
+ .container{
+     color: white;
+     font-weight: bolder;
+     text-align: center;
+     margin-left: 100px;
+     font-size: 2.25rem;
+     padding-bottom: 30px;
+     margin-top: -250px;
+     
+ }
+
+ .logo{
+     width: 400px;
+     height: 200px; 
+ }
+
+ .banner{
+     width:100%;
+     height:100vh;
+     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url("../static/LNMIIT\ VIEW.jpg");
+     background-size: cover;
+     background-position: center;
+ }
+
+
+ .login{
+     display: flex;
+     flex-direction: row;
+     justify-content:center;
+     align-items: center;
+     text-align: center;
+     margin-left: 10px;
+     min-height: 20vh;
+ }
+
+ .btn-1{
+     width:200px;
+     padding:15px 0;
+     text-align:center;
+     margin: 20px 10px;
+     border-radius: 25px;
+     font-weight: bold;
+     border: 2px solid #009688;
+     background: transparent;
+     color: #fff;
+     cursor : pointer;
+     margin-top: -200px;
+
+ }
+ .btn-1:hover{
+     box-shadow: inset 300px 0 0 0 #009688;
+     cursor: pointer;
+     color: #000;
+
+ }
+
+ .btn-2{
+    width:200px;
+    padding:15px 0;
+    text-align:center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor : pointer;
+    margin-top: -200px;  
+}
+
+.btn-2:hover{
+    box-shadow: inset 300px 0 0 0 #009688;
+    cursor: pointer;
+    color: #000;
+
+}
+
+.btn-2:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: #009688;
+}
+.btn-1:hover::before{
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+</style>
+
+<body>
+
+    <div class = "banner">
+        <div class = "logo">
+            <img src = '../static/logo.png'  style="justify-content: right; align-items: right; width: 99%; height: 100px;" alt="">
+        </div>
+        
+        <div class="container">
+            
+            <h1>Student Feedback System</h1>
+            <img src="../static/feedback.png"  style="justify-content: right; align-items: right; width: 99%; height: 500px;" alt="">
+        </div>
+
+        <div class="login">
+<!--            "window.location.href"(JAVASCRIPT) : returns the URL of the current page., dynamic url create: url_for() (FLASK)-->
+            <button class="btn-1" onclick="window.location.href='{{ url_for('admin') }}';" type="button">STUDENT LOGIN</button>
+            <button class="btn-2" onclick="window.location.href='{{ url_for('admin1') }}';" type="button">TEACHER LOGIN</button>
+
+        </div>
+    </div>
+
+</body>
+</html>
